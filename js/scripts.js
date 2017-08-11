@@ -10,20 +10,25 @@ $(document).ready(function() {
 
     if (sideOne.match(/^\D+$/)|| sideTwo.match(/^\D+$/) || sideThree.match(/^\D+$/)){
       alert("That's not a triangle!")
+      return;
     };
 
     if (side1 === side2 || side2 === side3 || side3 === side1){
       if (side1 === side2 && side2 === side3){
-        alert("You've got an equalateral triangle!")
+        $("#type").text("equalateral")
+        $("#hidden").show();
       }else{
-        alert("You've got an isosceles triangle!")
+        $("#type").text("isosceles")
+        $("#hidden").show();
       }
     };
-    if (side1 != side2 && side2 != side3 && side3 != side1 && sideOne.match(/^\d+$/) && sideTwo.match(/^\d+$/) && sideThree.match(/^\d+$/)) {
-      alert("You've got a scalene triange!")
+    if (side1 != side2 && side2 != side3 && side3 != side1) {
+      $("#type").text("scalene")
+      $("#hidden").show();
     };
 
 // Closing Parens
+  event.preventDefault();
   });
 });
 
